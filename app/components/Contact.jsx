@@ -93,10 +93,10 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-navy-deep border border-white/10 text-white placeholder-white/25 px-5 py-3.5 text-sm font-body focus:outline-none focus:border-gold/50 transition-colors duration-300";
+    "w-full bg-surface-elevated border border-subtle text-primary placeholder:text-subtle px-5 py-3.5 text-sm font-body focus:outline-none focus:border-gold/50 transition-colors duration-300";
 
   return (
-    <section id="contact" className="relative py-32 bg-navy-deep overflow-hidden" ref={ref}>
+    <section id="contact" className="relative py-32 bg-page overflow-hidden" ref={ref}>
       {RECAPTCHA_SITE_KEY && (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
@@ -114,7 +114,7 @@ export default function Contact() {
           <h2 className="section-title mb-6">
             Let&apos;s Build <span className="gold-text">Something Great</span>
           </h2>
-          <p className="text-white/45 font-body max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-muted font-body max-w-xl mx-auto text-base leading-relaxed">
             Have a project in mind? We&apos;d love to hear about it. Tell us what you&apos;re
             building and we&apos;ll get back to you within 24 hours.
           </p>
@@ -122,20 +122,21 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left — info */}
-          <div className={`lg:col-span-2 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
+          <div className={`lg:col-span-2 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}>
             <div className="space-y-8 mb-12">
               {contactInfo.map((c, i) => {
                 const Icon = c.icon;
                 return (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gold/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-gold/10 flex items-center justify-center shrink-0">
                       <Icon size={16} className="text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/35 text-xs tracking-widest uppercase font-body mb-1">
+                      <p className="text-subtle text-xs tracking-widest uppercase font-body mb-1">
                         {c.label}
                       </p>
-                      <p className="text-white font-body text-sm">{c.value}</p>
+                      <p className="text-primary font-body text-sm">{c.value}</p>
                     </div>
                   </div>
                 );
@@ -143,14 +144,14 @@ export default function Contact() {
             </div>
 
             {/* CTA box */}
-            <div className="p-8 bg-navy-light border border-gold/20">
+            <div className="p-8 bg-surface-elevated border border-subtle">
               <p className="text-gold text-xs tracking-widest uppercase font-body mb-4">
                 Quick Start
               </p>
-              <h3 className="font-display font-bold text-white text-xl mb-3">
+              <h3 className="font-display font-bold text-primary text-xl mb-3">
                 Free 30-Minute Discovery Call
               </h3>
-              <p className="text-white/40 text-sm font-body leading-relaxed mb-6">
+              <p className="text-muted text-sm font-body leading-relaxed mb-6">
                 Not ready to commit? Start with a no-pressure conversation about your
                 product vision. We&apos;ll give you honest advice — even if that means
                 pointing you elsewhere.
@@ -165,14 +166,15 @@ export default function Contact() {
           </div>
 
           {/* Right — form */}
-          <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
+          <div className={`lg:col-span-3 transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+            }`}>
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-20 border border-gold/20 bg-gold/5">
+              <div className="h-full flex flex-col items-center justify-center text-center py-20 border border-subtle bg-surface-elevated">
                 <CheckCircle2 size={48} className="text-gold mb-6" />
-                <h3 className="font-display font-bold text-white text-2xl mb-3">
+                <h3 className="font-display font-bold text-primary text-2xl mb-3">
                   Message Received!
                 </h3>
-                <p className="text-white/50 font-body text-sm max-w-xs">
+                <p className="text-muted font-body text-sm max-w-xs">
                   Thanks for reaching out. We&apos;ll get back to you within 24 hours with
                   our thoughts on your project.
                 </p>
@@ -181,26 +183,26 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="text-white/30 text-xs tracking-widest uppercase font-body block mb-2">
+                    <label className="text-subtle text-xs tracking-widest uppercase font-body block mb-2">
                       Your Name *
                     </label>
                     <input
                       required
                       type="text"
-                      placeholder="Arjun Natarajan"
+                      placeholder="James Dal"
                       className={inputClass}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                     />
                   </div>
                   <div>
-                    <label className="text-white/30 text-xs tracking-widest uppercase font-body block mb-2">
+                    <label className="text-subtle text-xs tracking-widest uppercase font-body block mb-2">
                       Email Address *
                     </label>
                     <input
                       required
                       type="email"
-                      placeholder="arjun@company.com"
+                      placeholder="james.dal@company.com"
                       className={inputClass}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -209,7 +211,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="text-white/30 text-xs tracking-widest uppercase font-body block mb-2">
+                  <label className="text-subtle text-xs tracking-widest uppercase font-body block mb-2">
                     Company / Startup Name
                   </label>
                   <input
@@ -222,7 +224,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="text-white/30 text-xs tracking-widest uppercase font-body block mb-2">
+                  <label className="text-subtle text-xs tracking-widest uppercase font-body block mb-2">
                     Project Type *
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -231,7 +233,7 @@ export default function Contact() {
                         key={pt}
                         type="button"
                         onClick={() => setForm({ ...form, type: pt })}
-                        className={`text-xs font-body px-4 py-2 tracking-wider border transition-all duration-200 ${form.type === pt
+                        className={`text-xs font-body px-4 py-2 tracking-wider border border-subtle transition-all duration-200 ${form.type === pt
                           ? "bg-gold text-navy border-gold font-semibold"
                           : "border-white/15 text-white/45 hover:border-gold/50 hover:text-gold"
                           }`}

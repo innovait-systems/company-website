@@ -1,11 +1,31 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Twitter, Linkedin, Github, Instagram } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import logoDark from "@/app/assets/images/logo-dark.svg";
+import logoLight from "@/app/assets/images/logo-light.svg";
 
-const footerLinks = {
-  Company: ["About", "Services", "Work", "Blog", "Contact"],
-  Services: ["Web Apps", "Mobile Apps", "SaaS Products", "AI Integrations"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
-};
+const Company = [
+  { "label": "About", "href": "/#about" },
+  { "label": "Services", "href": "/#services" },
+  { "label": "Work", "href": "/#work" },
+  { "label": "Blog", "href": "/#blog" },
+  { "label": "Contact", "href": "/#contact" }
+];
+
+const Services = [
+  { "label": "Web Apps", "href": "/services/web-application-development" },
+  { "label": "Mobile Apps", "href": "/services/mobile-app-development" },
+  { "label": "SaaS Products", "href": "/services/saas-product-engineering" },
+  { "label": "AI Integrations", "href": "/services/ai-intelligent-integrations" }
+];
+
+const Legal = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
+];
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },
@@ -15,8 +35,47 @@ const socials = [
 ];
 
 export default function Footer() {
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const resolveInitialTheme = () => {
+      const root = document.documentElement;
+      const stored = window.localStorage.getItem("innovait_theme");
+      if (stored === "light" || stored === "dark") return stored;
+      if (root.dataset.theme === "light" || root.dataset.theme === "dark") {
+        return root.dataset.theme;
+      }
+      const prefersDark =
+        window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    };
+
+    setTheme(resolveInitialTheme());
+
+    const handleThemeChange = (event) => {
+      const next = event.detail?.theme;
+      if (next === "light" || next === "dark") {
+        setTheme(next);
+      }
+    };
+
+    // Listen for theme changes dispatched from Navbar
+    window.addEventListener(
+      "theme:change",
+      handleThemeChange,
+    );
+    return () => {
+      window.removeEventListener(
+        "theme:change",
+        handleThemeChange,
+      );
+    };
+  }, []);
+
   return (
-    <footer className="relative bg-navy-deep border-t border-white/5">
+    <footer className="relative bg-page border-t border-subtle">
       {/* Top CTA strip */}
       <div className="bg-gold py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -37,10 +96,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-12 mb-16">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <div className="font-display font-bold text-3xl tracking-[0.12em] text-white mb-4">
-              INNOV<span className="text-gold">AI</span>T
+            <div className="font-display font-bold text-3xl tracking-[0.12em] text-primary mb-4">
+              <Link href="/" className="flex items-center gap-2 group">
+                <Image
+                  src={theme === "dark" ? logoDark : logoLight}
+                  alt="Innovait Logo"
+                  width={"auto"}
+                  height={55}
+                />
+              </Link>
             </div>
-            <p className="text-white/40 font-body text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-muted font-body text-sm leading-relaxed mb-6 max-w-xs">
               A Chennai-based technology company building intelligent web apps, mobile
               apps, and SaaS products for businesses that refuse to settle.
             </p>
@@ -62,35 +128,73 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          {Object.entries(footerLinks).map(([section, links]) => (
-            <div key={section}>
-              <h4 className="text-white font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">
-                {section}
-              </h4>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-white/35 hover:text-gold text-sm font-body transition-colors duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <h4 className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {Company.map((link, i) => (
+                <li key={link.label}>
+                  <Link
+                    key={i}
+                    href={link.href}
+                    className="text-muted hover:text-gold text-sm font-body transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">
+              Services
+            </h4>
+            <ul className="space-y-3">
+              {Services.map((link, i) => (
+                <li key={link.label}>
+                  <Link
+                    key={i}
+                    href={link.href}
+                    className="text-muted hover:text-gold text-sm font-body transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-5">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {Legal.map((link, i) => (
+                <li key={link.label}>
+                  <Link
+                    key={i}
+                    href={link.href}
+                    className="text-muted hover:text-gold text-sm font-body transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5">
           <p className="text-white/25 text-xs font-body">
-            © 2026 Innovait Solution. All rights reserved.</p>
-          <div className="flex items-center gap-2 text-white/20 text-xs font-mono">
+            © 2026 Innovait Systems. All rights reserved.</p>
+          {/* <div className="flex items-center gap-2 text-white/20 text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             All systems operational
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

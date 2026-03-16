@@ -79,7 +79,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-navy-deep">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-page">
       {/* Canvas particles */}
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
 

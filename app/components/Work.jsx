@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -11,6 +12,7 @@ const projects = [
     result: "3× operational efficiency",
     accent: "#C9A84C",
     size: "large",
+    slug: "fleetos",
   },
   {
     category: "Mobile App",
@@ -20,6 +22,7 @@ const projects = [
     result: "50K+ downloads",
     accent: "#1B6CA8",
     size: "small",
+    slug: "nilvaa-health",
   },
   {
     category: "Enterprise Web App",
@@ -29,6 +32,7 @@ const projects = [
     result: "₹400Cr+ disbursed",
     accent: "#C9A84C",
     size: "small",
+    slug: "grantsphere",
   },
   {
     category: "AI Integration",
@@ -38,6 +42,7 @@ const projects = [
     result: "80% time saved",
     accent: "#1B6CA8",
     size: "large",
+    slug: "documind",
   },
 ];
 
@@ -60,7 +65,7 @@ export default function Work() {
   const filtered = active === "All" ? projects : projects.filter(p => p.category === active);
 
   return (
-    <section id="work" className="relative py-32 bg-navy overflow-hidden" ref={ref}>
+    <section id="work" className="relative py-32 bg-page overflow-hidden" ref={ref}>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 opacity-5 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at bottom left, #1B6CA8, transparent 70%)" }} />
 
@@ -73,7 +78,7 @@ export default function Work() {
               Products We&apos;re <span className="gold-text">Proud Of</span>
             </h2>
           </div>
-          <p className="text-white/40 font-body text-sm max-w-xs leading-relaxed">
+          <p className="text-muted font-body text-sm max-w-xs leading-relaxed">
             A selection of projects across industries — each one built with the same obsession for quality.
           </p>
         </div>
@@ -85,8 +90,8 @@ export default function Work() {
               key={f}
               onClick={() => setActive(f)}
               className={`text-xs tracking-widest uppercase font-body px-5 py-2.5 transition-all duration-300 ${active === f
-                  ? "bg-gold text-navy font-semibold"
-                  : "border border-white/15 text-white/50 hover:border-gold/50 hover:text-gold"
+                ? "bg-gold text-navy font-semibold"
+                : "border border-white/15 text-white/50 hover:border-gold/50 hover:text-gold"
                 }`}
             >
               {f}
@@ -97,54 +102,67 @@ export default function Work() {
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {filtered.map((p, i) => (
-            <div
+            <Link
               key={p.title}
-              className={`card-dark group cursor-pointer relative overflow-hidden transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-              style={{ transitionDelay: `${i * 100 + 200}ms`, transitionDuration: "700ms" }}
+              href={`/work/${p.slug}`}
+              className="group block"
             >
-              {/* Top color bar */}
-              <div className="h-1 w-full" style={{ background: p.accent }} />
+              <div
+                className={`card-dark cursor-pointer relative overflow-hidden transition-all duration-700 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: `${i * 100 + 200}ms`, transitionDuration: "500ms" }}
+              >
+                {/* Top color bar */}
+                <div className="h-1 w-full" style={{ background: p.accent }} />
 
-              <div className="p-8">
-                {/* Category + result */}
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs tracking-widest uppercase font-body"
-                    style={{ color: p.accent }}>
-                    {p.category}
-                  </span>
-                  <span className="text-xs font-mono text-white/30 bg-white/5 px-3 py-1">
-                    {p.result}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="font-display font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors duration-300">
-                  {p.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-white/45 font-body text-sm leading-relaxed mb-6">
-                  {p.desc}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {p.tags.map((t) => (
-                    <span key={t} className="text-xs font-mono text-white/30 bg-white/5 px-2 py-0.5">
-                      {t}
+                <div className="p-8">
+                  {/* Category + result */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span
+                      className="text-xs tracking-widest uppercase font-body"
+                      style={{ color: p.accent }}
+                    >
+                      {p.category}
                     </span>
-                  ))}
-                </div>
+                    <span className="text-xs font-mono text-white/30 bg-white/5 px-3 py-1">
+                      {p.result}
+                    </span>
+                  </div>
 
-                {/* Arrow */}
-                <div className="flex items-center gap-2 text-xs tracking-widest uppercase font-body opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  style={{ color: p.accent }}>
-                  <span>View Case Study</span>
-                  <ArrowUpRight size={13} />
+                  {/* Title */}
+                  <h3 className="font-display font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors duration-300">
+                    {p.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-white/45 font-body text-sm leading-relaxed mb-6">
+                    {p.desc}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs font-mono text-white/30 bg-white/5 px-2 py-0.5"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Arrow */}
+                  <div
+                    className="flex items-center gap-2 text-xs tracking-widest uppercase font-body opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    style={{ color: p.accent }}
+                  >
+                    <span>View Case Study</span>
+                    <ArrowUpRight size={13} />
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

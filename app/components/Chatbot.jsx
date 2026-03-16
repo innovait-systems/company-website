@@ -54,7 +54,7 @@ export default function Chatbot() {
         email: data.email || "",
         summary: data.summary || "",
       };
-      setLead(enriched);
+      // setLead(enriched);
 
       if (!enriched.name || !enriched.email || !enriched.summary) {
         return;
@@ -124,6 +124,7 @@ export default function Chatbot() {
     if (typeof window === "undefined") return;
     const timer = setTimeout(() => {
       setOpen(true);
+      window.dispatchEvent(new CustomEvent("chatbot:open"));
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -199,7 +200,12 @@ export default function Chatbot() {
         <button
           type="button"
           className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-navy shadow-lg hover:bg-gold-light transition-colors"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setOpen(true);
+            if (typeof window !== "undefined") {
+              window.dispatchEvent(new CustomEvent("chatbot:open"));
+            }
+          }}
           aria-label="Open Innovait assistant"
         >
           <MessageCircle size={22} />
@@ -208,9 +214,9 @@ export default function Chatbot() {
 
       {/* Chat window */}
       {open && (
-        <div className="fixed bottom-6 right-6 z-40 w-full max-w-sm rounded-xl bg-navy-light border border-white/10 shadow-2xl flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-40 w-full max-w-sm rounded-xl bg-surface-elevated border border-subtle shadow-2xl flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-navy">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-subtle bg-surface-muted">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-navy">
                 <Sparkles size={18} />
@@ -219,15 +225,20 @@ export default function Chatbot() {
                 <p className="text-xs font-body uppercase tracking-[0.2em] text-gold">
                   Innovait Assistant
                 </p>
-                <p className="text-[11px] text-white/45 font-body">
-                  Ask about projects, services & fit
+                <p className="text-[11px] text-subtle font-body">
+                  Ask about projects, services & faq
                 </p>
               </div>
             </div>
             <button
               type="button"
-              onClick={() => setOpen(false)}
-              className="text-white/40 hover:text-gold transition-colors"
+              onClick={() => {
+                setOpen(false);
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new CustomEvent("chatbot:close"));
+                }
+              }}
+              className="text-subtle hover:text-gold transition-colors"
               aria-label="Close assistant"
             >
               <X size={16} />
@@ -237,7 +248,7 @@ export default function Chatbot() {
           {/* Messages */}
           <div
             ref={messagesContainerRef}
-            className="max-h-80 min-h-[220px] overflow-y-auto px-4 py-3 space-y-3 text-sm font-body text-white/90"
+            className="max-h-80 min-h-[220px] overflow-y-auto px-4 py-3 space-y-3 text-sm font-body text-primary"
           >
             {messages.map((m) => (
               <div
@@ -246,7 +257,7 @@ export default function Chatbot() {
               >
                 <div
                   className={`rounded-lg px-3 py-2 max-w-[85%] whitespace-pre-wrap leading-relaxed ${m.role === "assistant"
-                    ? "bg-navy border border-white/10 text-white/90"
+                    ? "bg-surface-muted border border-subtle text-primary"
                     : "bg-gold text-navy"
                     }`}
                 >
@@ -267,11 +278,11 @@ export default function Chatbot() {
           </div>
 
           {/* Input */}
-          <div className="border-t border-white/10 bg-navy flex items-center gap-2 px-3 py-2">
+          <div className="border-t border-subtle bg-surface-muted flex items-center gap-2 px-3 py-2">
             <input
               type="text"
               placeholder="Ask about services, fit, timelines..."
-              className="flex-1 bg-transparent text-xs text-white placeholder-white/35 font-body focus:outline-none"
+              className="flex-1 bg-transparent text-xs text-primary placeholder:text-subtle font-body focus:outline-none"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {

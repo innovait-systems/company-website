@@ -64,7 +64,7 @@ export default function Testimonials() {
   const t = testimonials[active];
 
   return (
-    <section className="relative py-32 bg-navy-deep overflow-hidden" ref={ref}>
+    <section className="relative py-32 bg-page overflow-hidden" ref={ref}>
       <div className="absolute inset-0 grid-pattern opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -78,7 +78,7 @@ export default function Testimonials() {
 
         {/* Featured testimonial */}
         <div className={`max-w-4xl mx-auto mb-16 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="relative p-10 md:p-14 bg-navy-light border border-white/8">
+          <div className="relative p-10 md:p-14 bg-surface-elevated border border-subtle">
             {/* Quote icon */}
             <Quote size={48} className="text-gold/20 mb-8" />
 

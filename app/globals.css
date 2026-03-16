@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
+  /* Colors (used for Tailwind-generated utilities) */
   --color-navy: #0A1628;
   --color-navy-light: #0f2040;
   --color-navy-deep: #060e1a;
@@ -30,6 +30,65 @@
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-spin-slow: spin 20s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
+}
+
+/* High-level theme tokens (used for actual runtime theming) */
+:root {
+  --page-bg: #0A1628;
+  --page-text: #f9fafb;
+  --surface-muted: #0f172a;
+  --surface-elevated: #0f2040;
+  --text-muted: #cbd5f5;
+  --text-subtle: #94a3b8;
+  --card-bg: #0f2040;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(148, 163, 184, 0.25);
+  --border-strong: rgba(148, 163, 184, 0.45);
+  --nav-bg-scrolled: rgba(10, 22, 40, 0.95);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --page-bg: #f4f6fa;
+    --page-text: #020617;
+    --surface-muted: #e5e9f5;
+    --surface-elevated: #ffffff;
+    --text-muted: #475569;
+    --text-subtle: #64748b;
+    --card-bg: #ffffff;
+    --card-border: rgba(15, 23, 42, 0.12);
+    --border-subtle: rgba(148, 163, 184, 0.35);
+    --border-strong: rgba(30, 64, 175, 0.6);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.9);
+  }
+}
+
+:root[data-theme="light"] {
+  --page-bg: #f4f6fa;
+  --page-text: #020617;
+  --surface-muted: #e5e9f5;
+  --surface-elevated: #ffffff;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.12);
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --border-strong: rgba(30, 64, 175, 0.6);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="dark"] {
+  --page-bg: #0A1628;
+  --page-text: #f9fafb;
+  --surface-muted: #0f172a;
+  --surface-elevated: #0f2040;
+  --text-muted: #cbd5f5;
+  --text-subtle: #94a3b8;
+  --card-bg: #0f2040;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(148, 163, 184, 0.25);
+  --border-strong: rgba(148, 163, 184, 0.45);
+  --nav-bg-scrolled: rgba(10, 22, 40, 0.95);
 }
 
 @keyframes fadeUp {
@@ -68,8 +127,9 @@
   }
 
   body {
-    @apply bg-navy text-white font-body antialiased;
-    background-color: #0A1628;
+    @apply font-body antialiased;
+    background-color: var(--page-bg);
+    color: var(--page-text);
   }
 
   ::selection {
@@ -89,11 +149,13 @@
   }
 
   .section-label {
-    @apply text-gold text-xs tracking-[0.3em] uppercase font-body font-semibold;
+    @apply text-xs tracking-[0.3em] uppercase font-body font-semibold;
+    color: var(--text-subtle);
   }
 
   .section-title {
-    @apply font-display text-4xl md:text-5xl font-bold text-white leading-tight;
+    @apply font-display text-4xl md:text-5xl font-bold leading-tight;
+    color: var(--page-text);
   }
 
   .nav-link {
@@ -121,8 +183,11 @@
   }
 
   .card-dark {
-    @apply bg-navy-light border border-white/5 hover:border-gold/30
-           transition-all duration-500;
+    @apply hover:border-gold/30 transition-all duration-500;
+    background-color: var(--card-bg);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--card-border);
   }
 
   .noise-overlay {
@@ -133,6 +198,38 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .bg-page {
+    background-color: var(--page-bg);
+  }
+
+  .bg-surface {
+    background-color: var(--surface-muted);
+  }
+
+  .bg-surface-elevated {
+    background-color: var(--surface-elevated);
+  }
+
+  .text-primary {
+    color: var(--page-text);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .text-subtle {
+    color: var(--text-subtle);
+  }
+
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+
+  .border-strong {
+    border-color: var(--border-strong);
   }
 
   .writing-vertical {
@@ -189,4 +286,38 @@
 .gradient-border:hover {
   background: linear-gradient(#0f2040, #0f2040) padding-box,
               linear-gradient(135deg, #C9A84C, transparent, #1B6CA8) border-box;
+}
+
+/* Light theme overrides for common utility classes */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) body {
+    background-color: var(--page-bg);
+    color: var(--page-text);
+  }
+
+  :root:not([data-theme]) .bg-navy,
+  :root:not([data-theme]) .bg-navy-light,
+  :root:not([data-theme]) .bg-navy-deep {
+    background-color: var(--page-bg);
+  }
+
+  /* Make all "text-white" variants readable on light */
+  :root:not([data-theme]) [class*="text-white"] {
+    color: var(--page-text);
+  }
+}
+
+:root[data-theme="light"] body {
+  background-color: var(--page-bg);
+  color: var(--page-text);
+}
+
+:root[data-theme="light"] .bg-navy,
+:root[data-theme="light"] .bg-navy-light,
+:root[data-theme="light"] .bg-navy-deep {
+  background-color: var(--page-bg);
+}
+
+:root[data-theme="light"] [class*="text-white"] {
+  color: var(--page-text);
 }

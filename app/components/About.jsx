@@ -39,7 +39,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="relative py-32 bg-navy overflow-hidden" ref={ref}>
+    <section id="about" className="relative py-32 bg-page overflow-hidden" ref={ref}>
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at top right, #C9A84C, transparent 70%)" }} />
@@ -54,7 +54,7 @@ export default function About() {
               A Technology Company<br />
               <span className="gold-text">Born to Build.</span>
             </h2>
-            <div className="space-y-5 text-white/55 font-body leading-relaxed">
+            <div className="space-y-5 text-muted font-body leading-relaxed">
               <p className="text-base md:text-lg">
                 Innovait is a Chennai-born, globally-minded technology company. We
                 partner with startups, scaleups, and enterprises to build the digital
@@ -91,17 +91,17 @@ export default function About() {
               return (
                 <div
                   key={i}
-                  className={`card-dark gradient-border p-7 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  className={`card-dark p-7 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     }`}
-                  style={{ transitionDelay: `${i * 120 + 200}ms`, transitionDuration: "700ms" }}
+                  style={{ transitionDelay: `${i * 120 + 200}ms`, transitionDuration: "500ms" }}
                 >
                   <div className="w-10 h-10 rounded bg-gold/10 flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
                     <Icon size={18} className="text-gold" />
                   </div>
-                  <h3 className="font-display font-semibold text-white text-lg mb-2">
+                  <h3 className="font-display font-semibold text-primary text-lg mb-2">
                     {v.title}
                   </h3>
-                  <p className="text-white/45 text-sm font-body leading-relaxed">
+                  <p className="text-muted text-sm font-body leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
