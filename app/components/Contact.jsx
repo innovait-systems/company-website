@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import { Mail, MapPin, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 
+
 const contactInfo = [
   { icon: MapPin, label: "Location", value: "Chennai, Tamil Nadu, India" },
   { icon: Mail, label: "Email", value: "hello@innovait.com" },
@@ -105,7 +106,7 @@ export default function Contact() {
       )}
       <div className="absolute inset-0 grid-pattern opacity-25 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A84C, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, var(--accent-secondary), transparent 70%)" }} />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -129,8 +130,8 @@ export default function Contact() {
                 const Icon = c.icon;
                 return (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gold/10 flex items-center justify-center shrink-0">
-                      <Icon size={16} className="text-gold" />
+                    <div className="w-10 h-10 flex items-center justify-center shrink-0 rounded-full bg-(--accent-soft)">
+                      <Icon size={16} className="text-(--accent)" />
                     </div>
                     <div>
                       <p className="text-subtle text-xs tracking-widest uppercase font-body mb-1">
@@ -156,12 +157,34 @@ export default function Contact() {
                 product vision. We&apos;ll give you honest advice — even if that means
                 pointing you elsewhere.
               </p>
-              <a
-                href="mailto:hello@innovait.com"
-                className="flex items-center gap-2 text-gold text-xs tracking-widest uppercase font-body hover:gap-4 transition-all duration-300"
+              {/* add calendly below */}
+              <Script
+                src="https://assets.calendly.com/assets/external/widget.js"
+                strategy="afterInteractive"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window === "undefined") return;
+                  if (window.Calendly?.initPopupWidget) {
+                    window.Calendly.initPopupWidget({
+                      url: "https://calendly.com/innovait-systems-sales/30min",
+                    });
+                  }
+                }}
+                className="btn-primary w-full flex items-center justify-center gap-2 group text-xs tracking-[0.15em]"
+                aria-label="Schedule a 30-minute discovery call"
               >
-                Schedule a Call <ArrowRight size={13} />
-              </a>
+                SCHEDULE A CALL
+                <ArrowRight
+                  size={14}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
+              <p className="mt-3 text-subtle text-xs font-body leading-relaxed">
+                Opens a Calendly popup to book a 30-minute call.
+              </p>
+
             </div>
           </div>
 
@@ -233,9 +256,9 @@ export default function Contact() {
                         key={pt}
                         type="button"
                         onClick={() => setForm({ ...form, type: pt })}
-                        className={`text-xs font-body px-4 py-2 tracking-wider border border-subtle transition-all duration-200 ${form.type === pt
-                          ? "bg-gold text-navy border-gold font-semibold"
-                          : "border-white/15 text-white/45 hover:border-gold/50 hover:text-gold"
+                        className={`text-xs font-body px-4 py-2 tracking-wider border transition-all duration-200 ${form.type === pt
+                          ? "bg-(--accent) text-white border-(--accent) font-semibold"
+                          : "border-subtle text-subtle hover:border-(--accent) hover:text-(--accent)"
                           }`}
                       >
                         {pt}

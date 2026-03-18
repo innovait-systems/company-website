@@ -112,7 +112,7 @@ export default function Hero() {
               }`}
           >
             <span className="section-label">Indian Technology Company</span>
-            <span className="h-px w-12 bg-gold/50" />
+            <span className="h-px w-12 bg-(--accent-secondary)/60" />
             <span className="section-label opacity-60">Est. 2016</span>
           </div>
 
@@ -182,7 +182,7 @@ export default function Hero() {
       {/* Right side label */}
       <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4">
         <span className="writing-vertical text-white/20 text-xs tracking-[0.3em] uppercase font-body">
-          innovait.com
+          innovait-systems.com
         </span>
         <span className="h-16 w-px bg-gold/20" />
       </div>

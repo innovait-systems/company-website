@@ -1,18 +1,21 @@
 @import "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";
+@import "https://assets.calendly.com/assets/external/widget.css";
 @import "tailwindcss";
 
 @theme {
   /* Colors (used for Tailwind-generated utilities) */
-  --color-navy: #0A1628;
-  --color-navy-light: #0f2040;
-  --color-navy-deep: #060e1a;
+  --color-navy: #0f172a;
+  --color-navy-light: #111827;
+  --color-navy-deep: #020617;
 
-  --color-gold: #C9A84C;
-  --color-gold-light: #DFC078;
-  --color-gold-dark: #A8872E;
+  /* Brand secondary (orange) for Tailwind utilities that still use gold naming */
+  --color-gold: #ff9f43;
+  --color-gold-light: #ffb865;
+  --color-gold-dark: #f97316;
 
-  --color-sapphire: #1B6CA8;
-  --color-frost: #F4F6FA;
+  /* Brand accent blue */
+  --color-sapphire: #2563eb;
+  --color-frost: #f9fafb;
 
   /* Typography */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -34,61 +37,95 @@
 
 /* High-level theme tokens (used for actual runtime theming) */
 :root {
-  --page-bg: #0A1628;
+  /* Brand palette reference */
+  --brand-primary: #0f172a;
+  --brand-accent: #2563eb;
+  --brand-secondary: #ff9f43;
+  --brand-surface: #ffffff;
+  --brand-muted-bg: #f9fafb;
+  --brand-border: #e5e7eb;
+
+  /* Default = dark theme */
+  --page-bg: #020617;
   --page-text: #f9fafb;
-  --surface-muted: #0f172a;
-  --surface-elevated: #0f2040;
+  --surface-muted: #020617;
+  --surface-elevated: #0f172a;
   --text-muted: #cbd5f5;
   --text-subtle: #94a3b8;
-  --card-bg: #0f2040;
-  --card-border: rgba(255, 255, 255, 0.12);
-  --border-subtle: rgba(148, 163, 184, 0.25);
-  --border-strong: rgba(148, 163, 184, 0.45);
-  --nav-bg-scrolled: rgba(10, 22, 40, 0.95);
+  --card-bg: #0f172a;
+  --card-border: rgba(148, 163, 184, 0.35);
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --border-strong: rgba(148, 163, 184, 0.55);
+  --nav-bg-scrolled: rgba(15, 23, 42, 0.95);
+
+  /* Accent tokens */
+  --accent: var(--brand-accent);
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.14);
+  --accent-secondary: var(--brand-secondary);
+  --accent-secondary-soft: rgba(255, 159, 67, 0.16);
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme]) {
-    --page-bg: #f4f6fa;
-    --page-text: #020617;
-    --surface-muted: #e5e9f5;
-    --surface-elevated: #ffffff;
-    --text-muted: #475569;
-    --text-subtle: #64748b;
-    --card-bg: #ffffff;
-    --card-border: rgba(15, 23, 42, 0.12);
-    --border-subtle: rgba(148, 163, 184, 0.35);
-    --border-strong: rgba(30, 64, 175, 0.6);
-    --nav-bg-scrolled: rgba(255, 255, 255, 0.9);
+    --page-bg: var(--brand-muted-bg); /* #F9FAFB */
+    --page-text: var(--brand-primary); /* #0F172A */
+    --surface-muted: #eef2ff;
+    --surface-elevated: var(--brand-surface); /* #FFFFFF */
+    --text-muted: #4b5563;
+    --text-subtle: #6b7280;
+    --card-bg: var(--brand-surface);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --border-subtle: var(--brand-border); /* #E5E7EB */
+    --border-strong: #cbd5e1;
+    --nav-bg-scrolled: rgba(249, 250, 251, 0.95);
+
+    --accent: var(--brand-accent);
+    --accent-strong: #1d4ed8;
+    --accent-soft: rgba(37, 99, 235, 0.12);
+    --accent-secondary: var(--brand-secondary);
+    --accent-secondary-soft: rgba(255, 159, 67, 0.14);
   }
 }
 
 :root[data-theme="light"] {
-  --page-bg: #f4f6fa;
-  --page-text: #020617;
-  --surface-muted: #e5e9f5;
-  --surface-elevated: #ffffff;
-  --text-muted: #475569;
-  --text-subtle: #64748b;
-  --card-bg: #ffffff;
-  --card-border: rgba(15, 23, 42, 0.12);
-  --border-subtle: rgba(148, 163, 184, 0.35);
-  --border-strong: rgba(30, 64, 175, 0.6);
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.9);
+  --page-bg: var(--brand-muted-bg);
+  --page-text: var(--brand-primary);
+  --surface-muted: #eef2ff;
+  --surface-elevated: var(--brand-surface);
+  --text-muted: #4b5563;
+  --text-subtle: #6b7280;
+  --card-bg: var(--brand-surface);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --border-subtle: var(--brand-border);
+  --border-strong: #cbd5e1;
+  --nav-bg-scrolled: rgba(249, 250, 251, 0.95);
+
+  --accent: var(--brand-accent);
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.12);
+  --accent-secondary: var(--brand-secondary);
+  --accent-secondary-soft: rgba(255, 159, 67, 0.14);
 }
 
 :root[data-theme="dark"] {
-  --page-bg: #0A1628;
+  --page-bg: #020617;
   --page-text: #f9fafb;
-  --surface-muted: #0f172a;
-  --surface-elevated: #0f2040;
+  --surface-muted: #020617;
+  --surface-elevated: #0f172a;
   --text-muted: #cbd5f5;
   --text-subtle: #94a3b8;
-  --card-bg: #0f2040;
-  --card-border: rgba(255, 255, 255, 0.12);
-  --border-subtle: rgba(148, 163, 184, 0.25);
-  --border-strong: rgba(148, 163, 184, 0.45);
-  --nav-bg-scrolled: rgba(10, 22, 40, 0.95);
+  --card-bg: #0f172a;
+  --card-border: rgba(148, 163, 184, 0.35);
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --border-strong: rgba(148, 163, 184, 0.55);
+  --nav-bg-scrolled: rgba(15, 23, 42, 0.95);
+
+  --accent: var(--brand-accent);
+  --accent-strong: #60a5fa;
+  --accent-soft: rgba(37, 99, 235, 0.24);
+  --accent-secondary: var(--brand-secondary);
+  --accent-secondary-soft: rgba(255, 159, 67, 0.2);
 }
 
 @keyframes fadeUp {
@@ -141,11 +178,11 @@
 @layer components {
   .gold-text {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(135deg, #C9A84C, #DFC078, #C9A84C);
+    background-image: linear-gradient(135deg, #ff9f43, #ffb865, #ff9f43);
   }
 
   .gold-border {
-    border-image: linear-gradient(135deg, #C9A84C, #DFC078) 1;
+    border-image: linear-gradient(135deg, #ff9f43, #ffb865) 1;
   }
 
   .section-label {
@@ -159,27 +196,48 @@
   }
 
   .nav-link {
-    @apply text-white/60 hover:text-gold text-sm tracking-wider font-body transition-colors duration-300 relative;
+    @apply text-sm tracking-wider font-body transition-colors duration-300 relative;
+    color: var(--text-subtle);
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300;
+    @apply absolute -bottom-1 left-0 w-0 h-px transition-all duration-300;
+    background-color: var(--accent);
   }
 
   .nav-link:hover::after {
     @apply w-full;
   }
 
+  .nav-link:hover {
+    color: var(--accent);
+  }
+
   .btn-primary {
-    @apply bg-gold text-navy font-semibold px-8 py-3.5 font-body text-sm tracking-wider
-           hover:bg-gold-light transition-all duration-300 relative overflow-hidden
+    @apply font-semibold px-8 py-3.5 font-body text-sm tracking-wider
+           transition-all duration-300 relative overflow-hidden
            active:scale-95;
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-strong);
   }
 
   .btn-outline {
-    @apply border border-gold/50 text-gold font-body text-sm tracking-wider px-8 py-3.5
-           hover:bg-gold/10 hover:border-gold transition-all duration-300;
+    @apply font-body text-sm tracking-wider px-8 py-3.5 transition-all duration-300;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 159, 67, 0.7);
+    color: var(--accent-secondary);
+    background-color: transparent;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--accent-secondary-soft);
+    border-color: var(--accent-secondary);
   }
 
   .card-dark {
@@ -320,4 +378,13 @@
 
 :root[data-theme="light"] [class*="text-white"] {
   color: var(--page-text);
+}
+
+/* Calendly popup: ensure overlay is visible above fixed UI */
+.calendly-overlay {
+  z-index: 10000 !important;
+}
+
+.calendly-popup {
+  z-index: 10001 !important;
 }

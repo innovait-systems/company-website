@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Chatbot from "./components/Chatbot";
@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   title: "Innovait Systems",
   description:
     "Innovait is a Chennai-born, globally-minded technology company building intelligent web apps, mobile apps, SaaS platforms, and AI-powered solutions.",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F9FAFB" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F172A" },
+  ],
 };
 
 export default function RootLayout({

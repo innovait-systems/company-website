@@ -10,7 +10,7 @@ const services = [
     title: "Web Application Development",
     desc: "Custom web platforms, enterprise dashboards, and customer portals engineered for performance and scale. We work with React, Next.js, Node.js, and modern cloud infrastructure.",
     tags: ["React", "Next.js", "Node.js", "PostgreSQL", "AWS"],
-    highlight: true,
+    highlight: false,
     slug: "web-application-development",
   },
   {

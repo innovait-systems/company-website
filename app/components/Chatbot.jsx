@@ -199,7 +199,7 @@ export default function Chatbot() {
       {!open && (
         <button
           type="button"
-          className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-navy shadow-lg hover:bg-gold-light transition-colors"
+          className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-colors"
           onClick={() => {
             setOpen(true);
             if (typeof window !== "undefined") {
@@ -208,7 +208,9 @@ export default function Chatbot() {
           }}
           aria-label="Open Innovait assistant"
         >
-          <MessageCircle size={22} />
+          <div className="h-12 w-12 rounded-full flex items-center justify-center bg-(--accent) text-white hover:bg-(--accent-strong)">
+            <MessageCircle size={22} />
+          </div>
         </button>
       )}
 
@@ -218,7 +220,7 @@ export default function Chatbot() {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-subtle bg-surface-muted">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-navy">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-(--accent-secondary) text-(--brand-primary)">
                 <Sparkles size={18} />
               </div>
               <div>
@@ -296,7 +298,7 @@ export default function Chatbot() {
               type="button"
               onClick={handleSend}
               disabled={!canSend}
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-gold text-navy disabled:opacity-60"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-(--accent) text-white disabled:opacity-60"
               aria-label="Send message"
             >
               <Send size={14} />

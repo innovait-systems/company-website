@@ -60,14 +60,14 @@ export default function About() {
                 partner with startups, scaleups, and enterprises to build the digital
                 products that define their next chapter.
               </p>
-              <p className="text-base">
+              <p className="text-base md:text-lg">
                 The name says everything. Innovate — reimagined. The{" "}
                 <span className="text-gold font-semibold">AI</span> at the heart of
                 our name isn&apos;t a buzzword. It&apos;s a declaration: every solution
                 we craft is intelligent by design, precise in execution, and built to
                 last.
               </p>
-              <p className="text-base">
+              <p className="text-base md:text-lg">
                 From your first MVP to your thousandth enterprise user — we are the
                 team that builds with you, not just for you.
               </p>
