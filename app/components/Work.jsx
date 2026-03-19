@@ -89,9 +89,9 @@ export default function Work() {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`text-xs tracking-widest uppercase font-body px-5 py-2.5 transition-all duration-300 ${active === f
+              className={`btn-outline text-xs tracking-widest uppercase font-body px-5 py-2.5 transition-all duration-300 ${active === f
                 ? "bg-gold text-navy font-semibold"
-                : "border border-white/15 text-white/50 hover:border-gold/50 hover:text-gold"
+                : "hover:border-gold/50 hover:text-gold"
                 }`}
             >
               {f}
@@ -108,9 +108,8 @@ export default function Work() {
               className="group block"
             >
               <div
-                className={`card-dark cursor-pointer relative overflow-hidden transition-all duration-700 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`card-dark cursor-pointer relative overflow-hidden transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: `${i * 100 + 200}ms`, transitionDuration: "500ms" }}
               >
                 {/* Top color bar */}
@@ -145,7 +144,7 @@ export default function Work() {
                     {p.tags.map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-mono text-white/30 bg-white/5 px-2 py-0.5"
+                        className="btn-outline text-xs font-mono px-2 py-0.5"
                       >
                         {t}
                       </span>

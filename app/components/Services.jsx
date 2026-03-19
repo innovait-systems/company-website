@@ -117,7 +117,7 @@ export default function Services() {
                     {s.tags.map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-mono text-gold/70 bg-gold/5 border border-gold/15 px-3 py-1"
+                        className="text-xs font-mono btn-outline border border-gold/15 px-3 py-1"
                       >
                         {t}
                       </span>

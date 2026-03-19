@@ -122,13 +122,13 @@ export default function Testimonials() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`flex items-center gap-3 px-5 py-3 border transition-all duration-300 text-left ${active === i
-                  ? "border-gold/50 bg-gold/5"
-                  : "border-white/8 hover:border-white/20"
+              className={`btn-outline flex items-center gap-3 px-5 py-3 border transition-all duration-300 text-left ${active === i
+                ? "border-gold/50 bg-gold/5"
+                : "hover:border-white/20"
                 }`}
             >
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-navy text-xs flex-shrink-0"
+                className="w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-navy text-xs shrink-0"
                 style={{ background: active === i ? tm.accent : "#ffffff22", color: active === i ? "#0A1628" : "#fff" }}
               >
                 {tm.initials}
