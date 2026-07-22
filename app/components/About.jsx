@@ -5,23 +5,23 @@ import { Zap, Globe, Shield, Award } from "lucide-react";
 const values = [
   {
     icon: Zap,
-    title: "Intelligence First",
-    desc: "Every product we build carries AI-driven thinking at its core — not as a feature, but as a foundation.",
-  },
-  {
-    icon: Globe,
-    title: "Global Standards",
-    desc: "Built in India, engineered for the world. Our products meet enterprise-grade standards across every market.",
+    title: "Intelligence-First",
+    desc: "AI built in, not bolted on. We weave intelligent automation directly into the foundation of our workflows.",
   },
   {
     icon: Shield,
-    title: "Precision Crafted",
-    desc: "No shortcuts, no half-measures. We sweat the details so your users never have to.",
+    title: "Standards-First",
+    desc: "Quality, compliance, and craft on every project — from PDF/UA and WCAG accessibility to secure OWASP code.",
   },
   {
     icon: Award,
-    title: "Trusted Partner",
-    desc: "We don't just deliver and disappear. We grow with your business, iterating and improving long-term.",
+    title: "Partnership",
+    desc: "Long-term relationships, not one-off engagements. We scale and iterate alongside your evolving pipeline.",
+  },
+  {
+    icon: Globe,
+    title: "Full Pipeline",
+    desc: "One team, zero handoffs, end-to-end ownership. We manage the entire lifecycle from intake to delivery.",
   },
 ];
 
@@ -51,35 +51,28 @@ export default function About() {
             style={{ transitionDuration: "800ms" }}>
             <p className="section-label mb-4">Who We Are</p>
             <h2 className="section-title mb-8">
-              A Technology Company<br />
-              <span className="gold-text">Born to Build.</span>
+              One Partner. Two Powerhouses.<br />
+              <span className="gold-text">Endless Possibilities.</span>
             </h2>
             <div className="space-y-5 text-muted font-body leading-relaxed">
               <p className="text-base md:text-lg">
-                Innovait is a Chennai-born, globally-minded technology company. We
-                partner with startups, scaleups, and enterprises to build the digital
-                products that define their next chapter.
+                Innovait Systems is a Chennai-born, globally-minded technology company delivering end-to-end publishing services and cutting-edge digital product engineering.
               </p>
               <p className="text-base md:text-lg">
-                The name says everything. Innovate — reimagined. The{" "}
-                <span className="text-gold font-semibold">AI</span> at the heart of
-                our name isn&apos;t a buzzword. It&apos;s a declaration: every solution
-                we craft is intelligent by design, precise in execution, and built to
-                last.
+                Formally incorporated in 2026, our expert teams combine 12+ years of craft with intelligent automation — serving publishers, enterprises, startups, and government organisations worldwide.
               </p>
               <p className="text-base md:text-lg">
-                From your first MVP to your thousandth enterprise user — we are the
-                team that builds with you, not just for you.
+                By bringing typesetting, digital format accessibility, and custom web/mobile/SaaS software development under one roof, we eliminate handoff friction and deliver industry-leading compliance out of the box.
               </p>
             </div>
 
             {/* Horizontal rule + quote */}
             <div className="mt-10 pt-10 border-t border-white/10">
               <blockquote className="font-display text-xl text-white/80 italic leading-relaxed">
-                &ldquo;Technology should feel intelligent, not complicated.&rdquo;
+                &ldquo;We exist to make powerful technology accessible — so every publisher, business, and product team can build things that matter.&rdquo;
               </blockquote>
               <p className="text-gold text-xs tracking-widest uppercase mt-3 font-body">
-                — Innovait Founding Principle
+                — Innovait Core Mission
               </p>
             </div>
           </div>

@@ -5,16 +5,16 @@ import { Mail, MapPin, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 
 
 const contactInfo = [
-  { icon: MapPin, label: "Location", value: "Chennai, Tamil Nadu, India" },
-  { icon: Mail, label: "Email", value: "hello@innovait.com" },
+  { icon: MapPin, label: "Location", value: "Navalur, Chennai – 600130, Tamil Nadu, India" },
+  { icon: Mail, label: "Email", value: "hello@innovait-systems.com" },
   { icon: Phone, label: "Phone", value: "+91 98400 00000" },
 ];
 
 const projectTypes = [
-  "Web Application",
-  "Mobile App",
+  "Publishing Services",
+  "Web/Mobile App",
   "SaaS Product",
-  "AI Integration",
+  "AI/ML Integration",
   "Other",
 ];
 

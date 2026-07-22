@@ -15,10 +15,10 @@ const Company = [
 ];
 
 const Services = [
-  { "label": "Web Apps", "href": "/services/web-application-development" },
-  { "label": "Mobile Apps", "href": "/services/mobile-app-development" },
-  { "label": "SaaS Products", "href": "/services/saas-product-engineering" },
-  { "label": "AI Integrations", "href": "/services/ai-intelligent-integrations" }
+  { "label": "Publishing Services", "href": "/#services" },
+  { "label": "Web & Mobile Apps", "href": "/services/web-application-development" },
+  { "label": "SaaS Engineering", "href": "/services/saas-product-engineering" },
+  { "label": "AI/ML Integrations", "href": "/services/ai-intelligent-integrations" }
 ];
 
 const Legal = [
@@ -80,7 +80,7 @@ export default function Footer() {
       <div className="bg-gold py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-display font-bold text-navy text-lg md:text-xl">
-            Ready to build something intelligent?
+            Ready to build or publish something intelligent?
           </p>
           <a
             href="#contact"
@@ -107,8 +107,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-muted font-body text-sm leading-relaxed mb-6 max-w-xs">
-              A Chennai-based technology company building intelligent web apps, mobile
-              apps, and SaaS products for businesses that refuse to settle.
+              Innovait Systems delivers end-to-end publishing production and cutting-edge digital product engineering — from manuscript to market, from idea to intelligent software.
             </p>
             <div className="flex items-center gap-4">
               {socials.map((s) => {

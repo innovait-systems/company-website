@@ -16,13 +16,13 @@ const projects = [
   },
   {
     category: "Mobile App",
-    title: "Nilvaa Health",
-    desc: "Patient-facing mobile app for an Indian healthtech startup — appointment booking, teleconsultation, and health records. 50,000+ downloads in 6 months.",
-    tags: ["React Native", "Firebase", "Node.js"],
-    result: "50K+ downloads",
+    title: "Smart Life Reminder",
+    desc: "An elegant, intuitive mobile utility app to organize tasks and receive smart location-based reminders. Bootstrapped, built, and launched directly to the Google Play Store.",
+    tags: ["Flutter", "Dart", "Riverpod", "Drift ORM", "SQLite", "Play Store"],
+    result: "Live on Play Store",
     accent: "#1B6CA8",
     size: "small",
-    slug: "nilvaa-health",
+    slug: "smart-life-reminder",
   },
   {
     category: "Enterprise Web App",
@@ -105,59 +105,63 @@ export default function Work() {
             <Link
               key={p.title}
               href={`/work/${p.slug}`}
-              className="group block"
+              className="group block h-full"
             >
               <div
-                className={`card-dark cursor-pointer relative overflow-hidden transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                className={`card-dark h-full cursor-pointer relative overflow-hidden transition-all duration-700 flex flex-col ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                   }`}
                 style={{ transitionDelay: `${i * 100 + 200}ms`, transitionDuration: "500ms" }}
               >
                 {/* Top color bar */}
-                <div className="h-1 w-full" style={{ background: p.accent }} />
+                <div className="h-1 w-full shrink-0" style={{ background: p.accent }} />
 
-                <div className="p-8">
-                  {/* Category + result */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span
-                      className="text-xs tracking-widest uppercase font-body"
+                <div className="p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Category + result */}
+                    <div className="flex items-center justify-between mb-6">
+                      <span
+                        className="text-xs tracking-widest uppercase font-body"
+                        style={{ color: p.accent }}
+                      >
+                        {p.category}
+                      </span>
+                      <span className="text-xs font-mono text-white/30 bg-white/5 px-3 py-1">
+                        {p.result}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-display font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors duration-300">
+                      {p.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-white/45 font-body text-sm leading-relaxed mb-6">
+                      {p.desc}
+                    </p>
+                  </div>
+
+                  <div>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {p.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="btn-outline text-xs font-mono px-2 py-0.5"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Arrow */}
+                    <div
+                      className="flex items-center gap-2 text-xs tracking-widest uppercase font-body opacity-0 group-hover:opacity-100 transition-all duration-300"
                       style={{ color: p.accent }}
                     >
-                      {p.category}
-                    </span>
-                    <span className="text-xs font-mono text-white/30 bg-white/5 px-3 py-1">
-                      {p.result}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-display font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-gold transition-colors duration-300">
-                    {p.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-white/45 font-body text-sm leading-relaxed mb-6">
-                    {p.desc}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="btn-outline text-xs font-mono px-2 py-0.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Arrow */}
-                  <div
-                    className="flex items-center gap-2 text-xs tracking-widest uppercase font-body opacity-0 group-hover:opacity-100 transition-all duration-300"
-                    style={{ color: p.accent }}
-                  >
-                    <span>View Case Study</span>
-                    <ArrowUpRight size={13} />
+                      <span>View Case Study</span>
+                      <ArrowUpRight size={13} />
+                    </div>
                   </div>
                 </div>
               </div>

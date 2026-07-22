@@ -4,6 +4,7 @@ import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import About from "@/app/components/About";
 import Services from "@/app/components/Services";
+import TechAndStandards from "@/app/components/TechAndStandards";
 import Work from "@/app/components/Work";
 import Testimonials from "@/app/components/Testimonials";
 import Blog from "@/app/components/Blog";
@@ -31,6 +32,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <TechAndStandards />
         <Work />
         <Testimonials />
         <Blog />
