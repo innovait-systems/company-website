@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     quote:
-      "We needed a partner who understood enterprise compliance and could still move fast. Innovait delivered GrantSphere on time, on budget, and with zero security incidents post-launch.",
+      "We needed a partner who understood enterprise compliance and could still move fast. Innovait delivered our platform on time, on budget, and with zero security incidents post-launch.",
     name: "Santhosh Meenakshisundaram",
     title: "Director of Digital, Tamil Nadu Government Initiative",
     location: "Chennai, India",

@@ -25,14 +25,14 @@ const projects = [
     slug: "smart-life-reminder",
   },
   {
-    category: "Enterprise Web App",
-    title: "GrantSphere",
-    desc: "A government grant management portal enabling ministries to track, approve, and disburse funds across thousands of beneficiaries with full audit trails.",
-    tags: ["React", "Java Spring", "Oracle DB"],
-    result: "₹400Cr+ disbursed",
+    category: "Cloud Integration",
+    title: "Zoho-AWS Hybrid Logistics Platform",
+    desc: "Redesigned a low-code transportation platform into a hybrid, cloud-native architecture using AWS SQS and Python services. Eliminated transaction bottlenecks and reduced operating costs.",
+    tags: ["Zoho Creator", "AWS SQS", "Python", "REST APIs"],
+    result: "Zero bottlenecks",
     accent: "#C9A84C",
     size: "small",
-    slug: "grantsphere",
+    slug: "zoho-aws-hybrid-logistics",
   },
   {
     category: "AI Integration",
@@ -46,7 +46,7 @@ const projects = [
   },
 ];
 
-const filters = ["All", "SaaS Platform", "Mobile App", "Enterprise Web App", "AI Integration"];
+const filters = ["All", "SaaS Platform", "Mobile App", "Cloud Integration", "AI Integration"];
 
 export default function Work() {
   const ref = useRef(null);

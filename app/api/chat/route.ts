@@ -45,7 +45,7 @@ COMPANY CONTEXT (keep this in mind):
   - Standards-First (Quality, compliance, and craft on every project)
   - Partnership (Long-term relationships, not one-off engagements)
   - Full Pipeline (One team, zero handoffs, end-to-end ownership)
-- Example work includes: FleetOS (fleet management SaaS), Smart Life Reminder (location-based mobile app), GrantSphere (government grant portal), and DocuMind (AI document intelligence).
+- Example work includes: FleetOS (fleet management SaaS), Smart Life Reminder (location-based mobile app), Zoho-AWS Hybrid Logistics Platform (hybrid cloud integration), and DocuMind (AI document intelligence).
 - We offer a free 30-minute discovery call to discuss new projects. Our office is located in Navalur, Chennai, India. Our email is hello@innovait-systems.com.
 `.trim();
 
