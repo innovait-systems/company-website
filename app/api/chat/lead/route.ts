@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || "dummy-key-for-build-purposes",
 });
 
 export const runtime = "nodejs";
@@ -29,7 +29,7 @@ Rules:
 `.trim();
 
 export async function POST(req: NextRequest) {
-  if (!client.apiKey) {
+  if (!client.apiKey || client.apiKey === "dummy-key-for-build-purposes") {
     return NextResponse.json(
       { error: "Lead extraction is not configured on the server." },
       { status: 500 }

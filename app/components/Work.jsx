@@ -24,15 +24,25 @@ const projects = [
     size: "small",
     slug: "smart-life-reminder",
   },
+  // {
+  //   category: "Cloud Integration",
+  //   title: "Zoho-AWS Hybrid Logistics Platform",
+  //   desc: "Redesigned a low-code transportation platform into a hybrid, cloud-native architecture using AWS SQS and Python services. Eliminated transaction bottlenecks and reduced operating costs.",
+  //   tags: ["Zoho Creator", "AWS SQS", "Python", "REST APIs"],
+  //   result: "Zero bottlenecks",
+  //   accent: "#C9A84C",
+  //   size: "small",
+  //   slug: "zoho-aws-hybrid-logistics",
+  // },
   {
-    category: "Cloud Integration",
-    title: "Zoho-AWS Hybrid Logistics Platform",
-    desc: "Redesigned a low-code transportation platform into a hybrid, cloud-native architecture using AWS SQS and Python services. Eliminated transaction bottlenecks and reduced operating costs.",
-    tags: ["Zoho Creator", "AWS SQS", "Python", "REST APIs"],
-    result: "Zero bottlenecks",
+    category: "Enterprise Web App",
+    title: "GrantSphere",
+    desc: "A government grant management portal that enables central and state departments to track, approve, and disburse funds with full audit trails.",
+    tags: ["React", "Java Spring", "Oracle DB", "Workflows"],
+    result: "₹430Cr disbursed",
     accent: "#C9A84C",
     size: "small",
-    slug: "zoho-aws-hybrid-logistics",
+    slug: "grantsphere",
   },
   {
     category: "AI Integration",
@@ -46,7 +56,7 @@ const projects = [
   },
 ];
 
-const filters = ["All", "SaaS Platform", "Mobile App", "Cloud Integration", "AI Integration"];
+const filters = ["All", "SaaS Platform", "Mobile App", "Enterprise Web App", "AI Integration"];
 
 export default function Work() {
   const ref = useRef(null);

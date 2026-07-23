@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY || "dummy-key-for-build-purposes",
 });
 
 export const runtime = "nodejs";
@@ -45,12 +45,12 @@ COMPANY CONTEXT (keep this in mind):
   - Standards-First (Quality, compliance, and craft on every project)
   - Partnership (Long-term relationships, not one-off engagements)
   - Full Pipeline (One team, zero handoffs, end-to-end ownership)
-- Example work includes: FleetOS (fleet management SaaS), Smart Life Reminder (location-based mobile app), Zoho-AWS Hybrid Logistics Platform (hybrid cloud integration), and DocuMind (AI document intelligence).
+- Example work includes: FleetOS (fleet management SaaS), Smart Life Reminder (location-based mobile app), GrantSphere (government grant portal), and DocuMind (AI document intelligence).
 - We offer a free 30-minute discovery call to discuss new projects. Our office is located in Navalur, Chennai, India. Our email is hello@innovait-systems.com.
 `.trim();
 
 export async function POST(req: NextRequest) {
-  if (!client.apiKey) {
+  if (!client.apiKey || client.apiKey === "dummy-key-for-build-purposes") {
     return NextResponse.json(
       { error: "Chat is not configured on the server." },
       { status: 500 }
