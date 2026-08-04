@@ -31,6 +31,7 @@ const publishingServices = [
     title: "Fixed-Layout EPUB Production",
     desc: "Pixel-perfect EPUB 3 FXL for children's books, cookbooks, art books, graphic novels, and illustrated titles.",
     tags: ["EPUB 3 FXL", "Art Books", "Graphic Novels", "Children's books"],
+    slug: "../workflow",
   },
   {
     icon: RefreshCw,
@@ -256,8 +257,9 @@ export default function Services() {
               </div>
             );
 
+            const targetHref = s.slug ? (s.slug.startsWith("/") || s.slug.startsWith("..") ? s.slug : `/services/${s.slug}`) : "";
             return s.slug ? (
-              <Link key={i} href={`/services/${s.slug}`} className="group block h-full">
+              <Link key={i} href={targetHref} className="group block h-full">
                 {cardContent}
               </Link>
             ) : (
