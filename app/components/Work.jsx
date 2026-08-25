@@ -6,6 +6,16 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     category: "SaaS Platform",
+    title: "PDF Accessibility Hub",
+    desc: "A SaaS that makes PDFs compliant with the PDF/UA-1 accessibility standard — auto-tag and remediate document structure, then verify with automatic tools: a full compliance report, reading order, alt text, and content integrity. Live at pdf-fix.innovait-systems.com.",
+    tags: ["Next.js", "Java · PDFBox", "veraPDF", "Supabase", "Razorpay"],
+    result: "PDF/UA-1 compliance",
+    accent: "#1B6CA8",
+    size: "large",
+    slug: "pdf-accessibility",
+  },
+  {
+    category: "SaaS Platform",
     title: "FleetOS",
     desc: "An end-to-end fleet management SaaS for a Chennai-based logistics company — real-time GPS tracking, driver analytics, and predictive maintenance. Scaled to 2,000+ vehicles.",
     tags: ["Next.js", "Node.js", "PostgreSQL", "WebSocket", "AWS"],
