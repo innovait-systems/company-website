@@ -69,8 +69,38 @@ export default function MobileAppDevelopmentPage() {
                 <p>
                   After launch, we typically stay on to help you monitor crash reports,
                   run A/B tests on onboarding, and plan your next set of releases so the
-                  app keeps improving instead of stagnating after v1.
+                  app keeps improving after v1.
                 </p>
+              </div>
+            </div>
+
+            {/* Recent work */}
+            <div className="mt-16 p-8 bg-surface-elevated border border-white/5 rounded-sm">
+              <p className="section-label mb-3">Recent work</p>
+              <h2 className="font-display text-lg text-primary mb-2">
+                ThanniCan — a delivery app for water-can suppliers
+              </h2>
+              <p className="text-[15px] text-muted font-body leading-relaxed mb-5 max-w-2xl">
+                A React Native app we built for local water-can (bubble-top) businesses:
+                daily and recurring orders, delivery routes, a digital khata, UPI and cash
+                payments, and GST invoices — with map-based discovery for customers and
+                support for 12 Indian languages. Currently in beta on Google Play.
+              </p>
+              <div className="flex flex-wrap gap-6">
+                <Link
+                  href="/work/thannican"
+                  className="inline-flex items-center gap-1.5 text-sm font-body font-semibold text-gold hover:opacity-80"
+                >
+                  Read the case study <span aria-hidden="true">→</span>
+                </Link>
+                <a
+                  href="https://thannican.innovait-systems.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-body text-subtle hover:text-gold"
+                >
+                  Visit the product <span aria-hidden="true">↗</span>
+                </a>
               </div>
             </div>
           </div>

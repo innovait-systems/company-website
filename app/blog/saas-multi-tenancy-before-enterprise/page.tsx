@@ -24,8 +24,8 @@ export default function MultiTenancyArticle() {
               Why Your SaaS Needs a Multi-Tenancy Strategy Before Your First Enterprise Customer
             </h1>
             <p className="text-muted text-sm font-body mb-10">
-              Multi-tenancy isn&apos;t a feature you bolt on later — it&apos;s a lens for how you model
-              data, permissions, and growth from day one.
+              Multi-tenancy shapes how you model data, permissions, and growth from
+              day one — and it is expensive to retrofit later.
             </p>
 
             <div className="space-y-6 text-muted font-body text-[15px] leading-relaxed">
@@ -57,8 +57,8 @@ export default function MultiTenancyArticle() {
 
               <h2>How We Design for It Early</h2>
               <p>
-                When we build new SaaS products, we treat the tenant as a first-class
-                citizen in the domain model. That usually means:
+                When we build new SaaS products, we make the tenant an explicit part
+                of the domain model from the start. That usually means:
               </p>
               <ul>
                 <li>

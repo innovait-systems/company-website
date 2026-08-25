@@ -17,7 +17,7 @@ const projects = [
   {
     category: "SaaS Platform",
     title: "FleetOS",
-    desc: "An end-to-end fleet management SaaS for a Chennai-based logistics company — real-time GPS tracking, driver analytics, and predictive maintenance. Scaled to 2,000+ vehicles.",
+    desc: "A fleet management SaaS for a Chennai-based logistics company — real-time GPS tracking, driver analytics, and predictive maintenance. Scaled to 2,000+ vehicles.",
     tags: ["Next.js", "Node.js", "PostgreSQL", "WebSocket", "AWS"],
     result: "3× operational efficiency",
     accent: "#C9A84C",
@@ -33,6 +33,16 @@ const projects = [
     accent: "#1B6CA8",
     size: "small",
     slug: "smart-life-reminder",
+  },
+  {
+    category: "Mobile App",
+    title: "ThanniCan",
+    desc: "A delivery-management app for local water-can (bubble-top) suppliers — daily and recurring orders, delivery routes, a digital khata, UPI and cash payments, and GST invoices, plus map-based discovery for customers. In beta on Google Play.",
+    tags: ["React Native", "Android", "UPI Payments", "GST Invoicing", "12 Languages"],
+    result: "In beta",
+    accent: "#C9A84C",
+    size: "small",
+    slug: "thannican",
   },
   // {
   //   category: "Cloud Integration",
@@ -95,11 +105,11 @@ export default function Work() {
           <div>
             <p className="section-label mb-4">Selected Work</p>
             <h2 className="section-title">
-              Products We&apos;re <span className="gold-text">Proud Of</span>
+              What we&apos;ve <span className="gold-text">built</span>
             </h2>
           </div>
           <p className="text-muted font-body text-sm max-w-xs leading-relaxed">
-            A selection of projects across industries — each one built with the same obsession for quality.
+            A few projects across publishing and software that we&apos;re glad to show.
           </p>
         </div>
 

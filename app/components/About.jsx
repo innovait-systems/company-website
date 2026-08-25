@@ -5,23 +5,23 @@ import { Zap, Globe, Shield, Award } from "lucide-react";
 const values = [
   {
     icon: Zap,
-    title: "Intelligence-First",
-    desc: "AI built in, not bolted on. We weave intelligent automation directly into the foundation of our workflows.",
+    title: "We automate the routine",
+    desc: "We build automation and AI into how the work runs, so the repetitive steps are handled before anyone touches them.",
   },
   {
     icon: Shield,
-    title: "Standards-First",
-    desc: "Quality, compliance, and craft on every project — from PDF/UA and WCAG accessibility to secure OWASP code.",
+    title: "We build to a standard",
+    desc: "Every project ships against a real standard — PDF/UA and WCAG for accessibility, OWASP for code — and we verify it before it goes out.",
   },
   {
     icon: Award,
-    title: "Partnership",
-    desc: "Long-term relationships, not one-off engagements. We scale and iterate alongside your evolving pipeline.",
+    title: "We stick around",
+    desc: "We work with clients over years, scaling and iterating alongside them as their pipeline grows.",
   },
   {
     icon: Globe,
-    title: "Full Pipeline",
-    desc: "One team, zero handoffs, end-to-end ownership. We manage the entire lifecycle from intake to delivery.",
+    title: "One team, start to finish",
+    desc: "The same team owns a project from intake to delivery, so nothing gets lost in a handoff.",
   },
 ];
 
@@ -51,25 +51,25 @@ export default function About() {
             style={{ transitionDuration: "800ms" }}>
             <p className="section-label mb-4">Who We Are</p>
             <h2 className="section-title mb-8">
-              One Partner. Two Powerhouses.<br />
-              <span className="gold-text">Endless Possibilities.</span>
+              Publishing and software,<br />
+              <span className="gold-text">under one roof.</span>
             </h2>
             <div className="space-y-5 text-muted font-body leading-relaxed">
               <p className="text-base md:text-lg">
-                Innovait Systems is a Chennai-born, globally-minded technology company delivering end-to-end publishing services and cutting-edge digital product engineering.
+                Innovait Systems is a Chennai team with two things we do well: publishing production and custom software.
               </p>
               <p className="text-base md:text-lg">
-                Formally incorporated in 2026, our expert teams combine 12+ years of craft with intelligent automation — serving publishers, enterprises, startups, and government organisations worldwide.
+                Incorporated in 2026, the team brings 12+ years of experience across both, working with publishers, enterprises, and government organisations.
               </p>
               <p className="text-base md:text-lg">
-                By bringing typesetting, digital format accessibility, and custom web/mobile/SaaS software development under one roof, we eliminate handoff friction and deliver industry-leading compliance out of the box.
+                Because typesetting, accessibility, and web, mobile and SaaS work all sit in one team, projects move between them without a handoff — and accessibility is part of the work from day one.
               </p>
             </div>
 
             {/* Horizontal rule + quote */}
             <div className="mt-10 pt-10 border-t border-white/10">
               <blockquote className="font-display text-xl text-white/80 italic leading-relaxed">
-                &ldquo;We exist to make powerful technology accessible — so every publisher, business, and product team can build things that matter.&rdquo;
+                &ldquo;Technology should be usable by everyone it reaches. That is the standard we build to.&rdquo;
               </blockquote>
               <p className="text-gold text-xs tracking-widest uppercase mt-3 font-body">
                 — Innovait Core Mission

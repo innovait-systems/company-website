@@ -22,7 +22,7 @@ export default function FleetOSCaseStudy() {
             <p className="section-label mb-3">Case Study · SaaS Platform</p>
             <h1 className="section-title mb-4">FleetOS</h1>
             <p className="text-muted font-body max-w-2xl text-base leading-relaxed mb-8">
-              FleetOS is an end-to-end fleet management SaaS for a Chennai-based
+              FleetOS is a fleet management SaaS for a Chennai-based
               logistics company, providing real-time visibility into more than 2,000
               vehicles across India.
             </p>

@@ -174,10 +174,10 @@ export default function Services() {
         <div className={`text-center mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="section-label mb-4">Our Service Divisions</p>
           <h2 className="section-title mb-6" id="services-list">
-            Two Service Divisions. <span className="gold-text">One Trusted Partner.</span>
+            Two divisions. <span className="gold-text">One team.</span>
           </h2>
           <p className="text-muted font-body max-w-2xl mx-auto text-base leading-relaxed">
-            From manuscript to market-ready output and from idea to intelligent, scalable software — we deliver end-to-end craft.
+            Publishing production on one side, software engineering on the other, and accessibility work we care about running through both.
           </p>
         </div>
 

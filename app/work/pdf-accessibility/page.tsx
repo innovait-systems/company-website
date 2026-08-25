@@ -27,10 +27,10 @@ export default function PdfAccessibilityCaseStudy() {
               PDF Accessibility Hub is a SaaS product built and operated by Innovait
               Systems that makes PDFs compliant with the PDF/UA-1 accessibility
               standard. Upload a document, and the engine auto-tags and remediates its
-              structure; a suite of automatic point tools then verifies the result —
-              a full PDF/UA &amp; Matterhorn compliance report, reading-order checks,
-              alt-text generation, and content-integrity analysis — with a full editor
-              for hands-on remediation.
+              structure; automatic point tools then verify the result —
+              a PDF/UA &amp; Matterhorn compliance report, reading-order checks,
+              alt-text generation, and content-integrity analysis — and an editor
+              covers the cases that need fixing by hand.
             </p>
 
             {/* Prominent link to the live product */}
@@ -64,11 +64,10 @@ export default function PdfAccessibilityCaseStudy() {
                 <h2 className="font-display text-lg text-primary">Problem Space</h2>
                 <p>
                   Accessibility regulations (the European Accessibility Act, Section 508,
-                  and national equivalents) increasingly require documents to be usable
-                  with screen readers. But making a PDF conform to PDF/UA is slow, expert
-                  work — tagging the structure tree, fixing reading order, adding alt
-                  text — and most teams have no way to even measure where a document
-                  stands.
+                  and national equivalents) require documents to be usable with screen
+                  readers. Making a PDF conform to PDF/UA is slow, expert work — tagging
+                  the structure tree, fixing reading order, adding alt text — and most
+                  teams have no way to measure where a document currently stands.
                 </p>
                 <p>
                   The goal was to turn that specialist workflow into something a
@@ -97,8 +96,8 @@ export default function PdfAccessibilityCaseStudy() {
               <div className="space-y-3">
                 <h2 className="font-display text-lg text-primary">What It Delivers</h2>
                 <ul className="list-disc list-inside space-y-2">
-                  <li>A pass/fail PDF/UA verdict in an auditor&apos;s vocabulary, in minutes rather than days.</li>
-                  <li>Automatic remediation that resolves the majority of common conformance failures.</li>
+                  <li>A pass/fail PDF/UA verdict, in the checkpoint terms an auditor uses.</li>
+                  <li>Automatic remediation that resolves many common conformance failures.</li>
                   <li>Downloadable compliance reports and a tagged, standards-compliant output PDF.</li>
                 </ul>
               </div>

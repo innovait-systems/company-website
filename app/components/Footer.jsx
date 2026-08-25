@@ -107,7 +107,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-muted font-body text-sm leading-relaxed mb-6 max-w-xs">
-              Innovait Systems delivers end-to-end publishing production and cutting-edge digital product engineering — from manuscript to market, from idea to intelligent software.
+              Innovait Systems builds accessible publishing production and custom software for publishers, enterprises, and government teams.
             </p>
             <div className="flex items-center gap-4">
               {socials.map((s) => {

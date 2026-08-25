@@ -292,7 +292,7 @@ export default function WorkflowHubPage() {
               Our Professional <span className="gold-text">Conversion Workflows</span>
             </h1>
             <p className="text-muted font-body max-w-3xl text-base md:text-lg leading-relaxed">
-              We leverage intelligent automation, structured preprocessing, and expert review environments to convert your publications with pixel-level precision and complete platform compliance.
+              We combine automation, structured preprocessing, and manual review to convert publications accurately and to each platform&apos;s requirements.
             </p>
 
             {/* Service Tabs */}

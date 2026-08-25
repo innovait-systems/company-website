@@ -122,9 +122,9 @@ export default function Hero() {
               }`}
             style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}
           >
-            <span className="text-white block">Where</span>
-            <span className="gold-text block">Intelligence</span>
-            <span className="text-white block">Meets Innovation.</span>
+            <span className="text-white block">Publishing and software,</span>
+            <span className="gold-text block">made with care,</span>
+            <span className="text-white block">built to a standard.</span>
           </h1>
 
           {/* Subheading */}
@@ -132,7 +132,7 @@ export default function Hero() {
             className={`text-white/55 text-lg md:text-xl leading-relaxed max-w-3xl mb-12 font-body transition-all duration-700 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
           >
-            Innovait Systems delivers end-to-end publishing production and cutting-edge digital product engineering — from manuscript to market, from idea to intelligent software.
+            Innovait Systems is a Chennai team that makes documents read cleanly and software that holds up — for publishers, enterprises, and the government teams we work with.
           </p>
 
           {/* CTAs */}

@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Innovait — Where Intelligence Meets Innovation</title>
+        <title>Innovait Systems — Publishing production and custom software</title>
         <meta
           name="description"
-          content="Innovait is a Chennai-based technology company building intelligent web apps, mobile apps, and SaaS products for businesses that refuse to settle."
+          content="Innovait Systems is a Chennai-based technology company delivering publishing production — typesetting, EPUB, and PDF/UA accessibility — alongside custom web, mobile, and SaaS software."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Innovait — Where Intelligence Meets Innovation" />
-        <meta property="og:description" content="Web apps, mobile apps, and SaaS products built with intelligence at the core." />
+        <meta property="og:title" content="Innovait Systems — Publishing production and custom software" />
+        <meta property="og:description" content="Publishing production and custom software, built to accessibility and quality standards." />
         <meta name="theme-color" content="#0A1628" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

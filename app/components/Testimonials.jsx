@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Innovait didn't just build our platform — they thought through every edge case before we even raised it. The FleetOS dashboard has become the nerve centre of our entire logistics operation.",
+      "FleetOS runs our whole logistics operation now. What stood out during the build was how carefully the Innovait team worked through edge cases we hadn't even raised yet.",
     name: "Ramesh Krishnamurthy",
     title: "CEO, SwiftMove Logistics",
     location: "Chennai, India",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     quote:
-      "The Nilvaa app went from wireframe to 50,000 downloads in under a year. Innovait's mobile team has an instinct for UX that you simply don't find in most agencies — they think like product owners.",
+      "Innovait's mobile team has a real feel for UX, and they think like product owners, not a vendor waiting for a spec. The Nilvaa app went from wireframe to 50,000 downloads in under a year.",
     name: "Dr. Priya Anandhan",
     title: "Founder, Nilvaa Health",
     location: "Bengaluru, India",
@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     quote:
-      "We needed a partner who understood enterprise compliance and could still move fast. Innovait delivered our platform on time, on budget, and with zero security incidents post-launch.",
+      "We needed a partner who understood enterprise compliance but could still move quickly. Innovait delivered on time, on budget, and with no security incidents after launch.",
     name: "Santhosh Meenakshisundaram",
     title: "Director of Digital, Tamil Nadu Government Initiative",
     location: "Chennai, India",
@@ -32,7 +32,7 @@ const testimonials = [
   },
   {
     quote:
-      "DocuMind has transformed how our senior partners review contracts. What used to take 4 hours now takes 20 minutes. The AI accuracy is genuinely impressive — well above what we expected.",
+      "DocuMind changed how our senior partners review contracts. A review that used to take about four hours now takes twenty minutes, and the AI's accuracy has held up better than we expected.",
     name: "Lakshmi Venkatesan",
     title: "Managing Partner, VLK & Associates (Law Firm)",
     location: "Coimbatore, India",
