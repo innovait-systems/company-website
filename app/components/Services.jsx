@@ -15,6 +15,8 @@ import {
   Code,
   Shield,
   Search,
+  Video,
+  MousePointer2,
 } from "lucide-react";
 
 const publishingServices = [
@@ -75,6 +77,13 @@ const publishingServices = [
     desc: "Comprehensive quality assurance, validation checks, compliance statements, preflight reports, and QA checklists on every project.",
     tags: ["QA checklists", "Preflight reports", "Validation", "Compliance"],
   },
+  {
+    icon: MousePointer2,
+    number: "09",
+    title: "Interactive HTML5 Content",
+    desc: "Develop engaging, JavaScript-driven HTML interactives tailored for EPUB 3 and the web. We build custom widgets, assessments, and dynamic content layers.",
+    tags: ["HTML5", "JavaScript", "EPUB Interactive", "Widgets"],
+  },
 ];
 
 const productServices = [
@@ -122,6 +131,13 @@ const productServices = [
     title: "UI/UX Design & Observability",
     desc: "Figma design systems, user research, Datadog/Grafana monitoring, SLO tracking, and post-launch iteration.",
     tags: ["Figma Systems", "User Research", "Datadog/Grafana", "SLO Tracking"],
+  },
+  {
+    icon: Video,
+    number: "07",
+    title: "Video & Image Annotation",
+    desc: "Expert data labeling for computer vision using CVAT and Label Studio. Precision bounding boxes, segmentation, and annotations to power your AI models.",
+    tags: ["CVAT", "Label Studio", "Computer Vision", "Data Labeling"],
   },
 ];
 
