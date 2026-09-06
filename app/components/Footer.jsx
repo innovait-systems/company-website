@@ -28,9 +28,9 @@ const Legal = [
 ];
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/innovait-systems" },
   { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Github, label: "GitHub", href: "https://github.com/innovait-systems" },
   { icon: Instagram, label: "Instagram", href: "#" },
 ];
 
@@ -117,6 +117,8 @@ export default function Footer() {
                     key={s.label}
                     href={s.href}
                     aria-label={s.label}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold/50 transition-all duration-300"
                   >
                     <Icon size={15} />
